@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>ChatHeap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <style>
+      body{
+        background-image:url("images/main-bg.jpg");
+        background-size: cover;
+      }
+      .icon-color {
+        background-color:#94536d !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Start your project here-->
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="text-center">
+            <div class="card text-center">
+              <div class="card-header">Scan qr code to open chatroom</div>
+               <div class="card-body">
+
+                <video id="preview"></video>
+
+              </div>
+              
+           </div>
+        </div>
+      </div>
+    </div>
+    <!-- End your project here-->
+  </body>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+  
+  <script>
+    wow = new WOW().init();
+  </script>
+
+  <script type="text/javascript">
+    let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+    scanner.addListener('scan', function (content) {
+      //location.replace("/test/transaction/submit/{{$pending_transaction_ID}}/"+content+"/{{$action}}");
+        alert(content);
+    });
+    Instascan.Camera.getCameras().then(function (cameras) {
+      if (cameras.length > 0) {
+        if(cameras.length >1){
+          scanner.start(cameras[1]);
+        }
+        scanner.start(cameras[0]);
+      } else {
+        //console.error('No cameras found.');
+        alert("No cameras found");
+      }
+    }).catch(function (e) {
+      console.error(e);
+    });
+  </script>
+</html>

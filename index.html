@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>FlashyChat</title>
+    <title>ChatHeap</title>
     <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -73,21 +73,27 @@
                   role="tabpanel"
                   aria-labelledby="tab-login"
                 >
-                  <form>
+                
+
                   <br>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                      <input type="email" id="loginName" class="form-control" />
-                      <label class="form-label" for="loginName">Enter email</label>
+                      <input type="text" id="hostname" name="hostname" class="form-control" required/>
+                      <label class="form-label" for="hostname">Enter your name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="email" id="client" name="client" class="form-control" required/>
+                      <label class="form-label" for="client">Enter email of user to add</label>
                     </div>
 
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Create chatroom</button>
-
+                    <button type="submit" id="sendlink" name="sendlink" class="btn btn-primary btn-block mb-4">Create chatroom</button>
+                 
                     <!-- Register buttons -->
                    
-                  </form>
+                 
                 </div>
                 <div
                   class="tab-pane fade"
@@ -99,8 +105,13 @@
                    <br>
                     <!-- Name input -->
                     <div class="form-outline mb-4">
-                      <input type="text" id="registerName" class="form-control" />
-                      <label class="form-label" for="registerName">Enter chatroom Id</label>
+                      <input type="text" id="hostname" name="hostname" class="form-control" />
+                      <label class="form-label" for="hostname">Enter your name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" id="chatroomId" class="form-control" />
+                      <label class="form-label" for="chatroomId">Enter chatroom Id</label>
                     </div>
 
                    
@@ -122,5 +133,14 @@
   <!-- MDB -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
-  <script type="text/javascript"></script>
+  <script type="text/javascript">
+  sendlink.addEventListener('click', function() {
+    var email = document.getElementById("client").value;
+    var sender_name = document.getElementById("hostname").value;
+    location.href = "https://chatheap.000webhostapp.com/chatroom.html?email="+email+"&name="+sender_name;
+    //window.open("https://chatheap.000webhostapp.com/chatroom.html?email="+email+"&name="+sender_name,"_self");
+    //location.replace("https://chatheap.000webhostapp.com/chatroom.html?email="+email+",name="+sender_name);
+  });
+   
+  </script>
 </html>

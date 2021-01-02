@@ -243,6 +243,7 @@ function initialize() {
 
         console.log('ID: ' + peer.id);
         recvId.innerHTML = "ID: " + peer.id;
+        sendLink(peer.id);
         status.innerHTML = "Awaiting connection........";
     });
     peer.on('connection', function(c) {
@@ -281,6 +282,29 @@ function initialize() {
         alert('' + err);
     });
 };
+
+
+
+function sendLink(room_Id)
+{
+    var url_string = window.location.href; // www.test.com?filename=test
+    var url = new URL(url_string);
+    var clientEmail = url.searchParams.get("email");
+    var senderName = url.searchParams.get("name");
+  
+    //var client_email=clientEmail;
+    //alert(client_email+"-"+senderName);
+
+    $.ajax({
+      url: 'https://chatheap.000webhostapp.com/send_link.php',
+      type: 'post',
+      dataType:'json',
+      data: {client: clientEmail, roomId:room_Id},
+      success: function(data){
+        alert(data);
+       }
+    });
+}
 
 /**
  * Triggered once a connection has been achieved.
