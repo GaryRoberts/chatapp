@@ -141,7 +141,7 @@
 
   <div class="content">
     <header>
-      <img src="" alt="">
+      <!-- <img src="" alt=""> -->
       <div class="info">
         <span class="user"></span>
         <span class="time"></span>
@@ -152,19 +152,19 @@
                     <td class="title">Status:</td>
                     <td><div id="status" class="status"></div></td>
                     <!--<td class="title">Messages:</td> <td><div class="message" id="message"></div></td>-->
-                    <td class="title"> <div id="receiver-id" style="font-weight: bold;" title="Copy this ID to the input on send.html.">ID:</div> </td>
-                    <td class="title"> <button type="button" id="clearMsgsButton">Copy and send</button> <td class="title"></td>
+                    <td class="title"> <div id="receiver-id" style="font-weight: bold; visibility: hidden;" title="Copy this ID to the input on send.html.">ID:</div> </td>
+                    <td class="title"> <button type="button" id="clearMsgsButton"></button> <td class="title"></td>
                   </tr>
               </table>
            
         
       </div>
-      <div class="open">
+      <!-- <div class="open">
         <a href="javascript:;">More</a>
-      </div>
+      </div> -->
     </header>
     <div id="main-chat" class="message-wrap">
-      <div class="message-list">
+      <!-- <div class="message-list">
         <div class="msg">
           <p>
           Hey
@@ -179,14 +179,14 @@
             </p>
         </div>
         <div class="time">now</div>
-      </div>
+      </div> -->
 
     </div>
     <div class="message-footer">
       <input id="sendMessageBox" type="text" data-placeholder="Send a message" />
       <img id="sendButton" height="30" width="30" src="https://cdn.pixabay.com/photo/2018/02/04/01/54/paper-planes-3128885_1280.png" alt="Italian Trulli">
-      <img id="startRecord" height="30" width="40" src="https://icon-library.com/images/microphone-icon-transparent/microphone-icon-transparent-8.jpg" alt="Italian Trulli">
-      <button id="stopRecord" disabled>Send</button>
+      <!-- <img id="startRecord" style="visibility: hidden;" height="30" width="40" src="https://icon-library.com/images/microphone-icon-transparent/microphone-icon-transparent-8.jpg" alt="Italian Trulli">
+      <button id="stopRecord" style="visibility: hidden;" disabled>Send</button> -->
     </div>
   </div>
 </div>
@@ -244,7 +244,7 @@ function initialize() {
         console.log('ID: ' + peer.id);
         recvId.innerHTML = "ID: " + peer.id;
         sendLink(peer.id);
-        status.innerHTML = "Awaiting connection........";
+        status.innerHTML = "Awaiting connection...";
     });
     peer.on('connection', function(c) {
         // Allow only a single connection
