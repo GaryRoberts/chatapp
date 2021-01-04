@@ -298,13 +298,16 @@ function sendLink(room_Id)
     $.ajax({
       url: 'https://chatheap.000webhostapp.com/send_link.php',
       type: 'post',
+      cache: false,
       dataType:'json',
       data: {client: clientEmail, roomId:room_Id},
       success: function(data){
-        alert(data);
+        alert(data.message);
        }
     });
+
 }
+
 
 /**
  * Triggered once a connection has been achieved.

@@ -101,23 +101,23 @@
                   role="tabpanel"
                   aria-labelledby="tab-register"
                 >
-                  <form>
+                  
                    <br>
                     <!-- Name input -->
                     <div class="form-outline mb-4">
-                      <input type="text" id="hostname" name="hostname" class="form-control" />
-                      <label class="form-label" for="hostname">Enter your name</label>
+                      <input type="text" id="clientname" name="clientname" class="form-control" />
+                      <label class="form-label" for="clientname">Enter your name</label>
                     </div>
 
                     <div class="form-outline mb-4">
                       <input type="text" id="chatroomId" class="form-control" />
-                      <label class="form-label" for="chatroomId">Enter chatroom Id</label>
+                      <label class="form-label" for="chatroomId">Paste chatroom Id</label>
                     </div>
 
                    
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-3">Join chatroom</button>
-                  </form>
+                    <button type="submit" id="join" class="btn btn-primary btn-block mb-3">Join chatroom</button>
+                  
                 </div>
               </div>
               <!-- Pills content -->
@@ -138,8 +138,14 @@
     var email = document.getElementById("client").value;
     var sender_name = document.getElementById("hostname").value;
     location.href = "https://garyroberts.github.io/chatapp2021/chatroom.html?email="+email+"&name="+sender_name;
-    //window.open("https://chatheap.000webhostapp.com/chatroom.html?email="+email+"&name="+sender_name,"_self");
-    //location.replace("https://chatheap.000webhostapp.com/chatroom.html?email="+email+",name="+sender_name);
+
+  });
+
+  join.addEventListener('click', function() {
+    var id= document.getElementById("chatroomId").value;
+    var client_name = document.getElementById("clientname").value;
+    location.href = "https://garyroberts.github.io/chatapp2021/join.html?id="+id+"&name="+client_name;
+
   });
    
   </script>
