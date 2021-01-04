@@ -149,11 +149,15 @@
         
               <table class="display">
                 <tr>
+                    <td>
+                        <span style="font-weight: bold">ID: </span>
+                        <input type="text" id="receiver-id" title="Input the ID from receive.html">
+                        <button id="connect-button">Connect</button>
+                    </td>
                     <td class="title">Status:</td>
                     <td><div id="status" class="status"></div></td>
-                    <!--<td class="title">Messages:</td> <td><div class="message" id="message"></div></td>-->
-                    <td class="title"> <div id="receiver-id" style="font-weight: bold; visibility: hidden;" title="Copy this ID to the input on send.html.">ID:</div> </td>
-                    <td class="title"> <button type="button" id="clearMsgsButton"></button> <td class="title"></td>
+                  
+                    <td class="title"> <button type="button" id="clearMsgsButton">Copy and send</button> <td class="title"></td>
                   </tr>
               </table>
            
