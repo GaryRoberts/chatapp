@@ -137,15 +137,16 @@
   sendlink.addEventListener('click', function() {
     var email = document.getElementById("client").value;
     var sender_name = document.getElementById("hostname").value;
-    location.href = "https://garyroberts.github.io/chatapp2021/chatroom.html?email="+email+"&name="+sender_name;
+    //location.href = "https://garyroberts.github.io/chatapp2021/chatroom.html?email="+email+"&name="+sender_name;
+    location.href = "chatroom.html?email="+email+"&name="+sender_name;
 
   });
 
   join.addEventListener('click', function() {
     var id= document.getElementById("chatroomId").value;
     var client_name = document.getElementById("clientname").value;
-    location.href = "https://chatheap.000webhostapp.com/join.html?id="+id+"&name="+client_name;
-
+    //location.href = "https://chatheap.000webhostapp.com/join.html?id="+id+"&name="+client_name;
+    location.href = "join.html?id="+id+"&name="+client_name;
   });
    
   </script>
